@@ -1,0 +1,13 @@
+.side-nav {
+    z-index: 9999999 !important;
+
+    .v-navigation-drawer {
+        position: relative !important;
+        flex: 1 1 auto;
+        min-width: 56px;
+    }
+
+        .v-list {
+            padding: 0;
+        }
+}
