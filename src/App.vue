@@ -4,16 +4,15 @@
     <v-main>
       <Header />
       <div class="main-content-box">
-        <HelloWorld />
+        <router-view />
       </div>
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import Header from "./components/Header.vue";
-import SideBar from "./components/SideBar.vue";
+import Header from "@components/layout/Header.vue";
+import SideBar from "@components/layout/SideBar.vue";
 </script>
 
 <style lang="scss" scoped></style>

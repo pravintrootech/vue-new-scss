@@ -1,22 +1,30 @@
 <template>
-  <v-app-bar color="primary" dark class="header">
-    <v-img class="Logo" :width="50" :height="50" cover :src="Logo"></v-img>
+  <v-app-bar color="body" dark class="header">
+    <v-btn
+      @click.stop="ui.toggleRail()"
+      :icon="ui.rail ? 'mdi-chevron-right' : 'mdi-chevron-left'"
+      variant="outlined"
+    ></v-btn>
     <v-spacer />
     <v-icon color="white" class="me-2">
       <IconDashbord />
     </v-icon>
-    <v-btn @click="toggleTheme" variant="outlined">
-      {{ currentTheme }}
+    <HeaderProfile />
+    <v-btn @click="toggleTheme" icon variant="outlined">
+      <component :is="currentTheme === 'light' ? Sun : SunMoon" />
     </v-btn>
   </v-app-bar>
 </template>
 
 <script setup>
-import "@/scss/nav.scss";
-import Logo from "@/assets/logo.svg";
+import "@styles/nav.scss";
 import { useTheme } from "vuetify";
 import { computed, onMounted } from "vue";
-import IconDashbord from "./icons/IconDashbord.vue";
+import IconDashbord from "@assets/icons/IconDashbord.vue";
+import { navToggle } from "@/stores/navToggle";
+import { Sun, SunMoon } from "lucide-vue-next";
+import HeaderProfile from "./inner-layout/Header-profile.vue";
+const ui = navToggle();
 
 const theme = useTheme();
 

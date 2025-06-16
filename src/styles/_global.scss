@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  .v-application{
+    color: rgb(var(--v-theme-black));
+  }
+}
+
+.v-main {
+  padding-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main-model .v-application__wrap {
+  flex-direction: row;
+}
+
+.main-content-box{
+  flex: 1 1;
+  padding: 20px;
+  background-color: rgb(var(--v-theme-body));
+}
+
+
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;              /* Width of vertical scrollbar */
+  height: 6px;             /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;      /* Track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;   /* Thumb color */
+  border-radius: 10px;
+  border: none; /* Space around thumb */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;            /* "auto" | "thin" | "none" */
+  scrollbar-color: #888 transparent;    /* thumb color track color */
+}

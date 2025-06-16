@@ -12,40 +12,20 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
+      '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+      '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
     },
   },
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `
-        @use "@/scss/variables" as *;
-        @use "@/scss/mixins" as *;
-        @use "@/scss/global" as *;
+        @use "@styles/variables" as *;
+        @use "@styles/mixins" as *;
+        @use "@styles/global" as *;
         ` , // Global import example
-      },
-    },
-  },
-  theme: {
-    defaultTheme: 'lightTheme', // ⬅️ used in toggle
-    themes: {
-      lightTheme: {
-        dark: false,
-        colors: {
-          primary: '#1976d2',
-          background: '#ffffff',
-          surface: '#f5f5f5',
-          onPrimary: '#ffffff',
-        },
-      },
-      darkTheme: {
-        dark: true,
-        colors: {
-          primary: '#90caf9',
-          background: '#121212',
-          surface: '#1e1e1e',
-          onPrimary: '#000000',
-        },
       },
     },
   },
